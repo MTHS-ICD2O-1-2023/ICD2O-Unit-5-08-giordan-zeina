@@ -1,5 +1,31 @@
-// Copyright (c) 2020 Mr. Coxall All rights reserved
+// Copyright (c) 2024 Giordan Zeina All rights reserved
 //
-// Created by: Mr. Coxall
-// Created on: Sep 2020
+// Created by: Giordan Zeina
+// Created on: May 2024
 // This file contains the JS functions for index.html
+
+"use strict"
+
+
+function myButtonClicked() {
+
+  // input
+  let numberA = parseInt(document.getElementById("number-a").value)
+  const numberB = parseInt(document.getElementById("number-b").value)
+  let counter = 0
+  let remainder = 0
+
+  while (true) {
+    if (numberA < numberB) {
+      remainder += numberA
+      break
+    } else {
+      document.getElementById("answer").innerHTML += numberA + " - " + numberB + " = " + (numberA - numberB) + "<br />"
+    }
+    numberA -= Math.abs(numberB)
+    counter++
+    console.log(numberA)
+  }
+  console.log(numberA)
+  document.getElementById("answer").innerHTML += "The answer is = " + counter + " with a remainder of " + remainder
+}
